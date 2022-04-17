@@ -70,7 +70,6 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pan"
-
                         android:shadowColor="@color/black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -109,7 +108,7 @@
                         app:boxCornerRadiusTopStart="8dp"
                         style="@style/LoginTextInputLayoutStyle">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/birthdate"
+                            android:id="@+id/dd"
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:importantForAutofill="no"
@@ -140,7 +139,7 @@
 
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/month"
+                            android:id="@+id/mm"
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:importantForAutofill="no"
@@ -165,7 +164,7 @@
                         app:boxCornerRadiusTopStart="8dp"
                         style="@style/LoginTextInputLayoutStyle">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/year"
+                            android:id="@+id/yyyy"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:importantForAutofill="no"
@@ -207,7 +206,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/next"
                 android:layout_height="wrap_content"
-                android:enabled="true"
+                android:enabled="false"
                 android:text="Next"
                 ></Button>
             <TextView
