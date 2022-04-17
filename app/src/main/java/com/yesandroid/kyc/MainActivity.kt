@@ -6,11 +6,16 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
+import com.yesandroid.kyc.db.Bank
+import com.yesandroid.kyc.db.BankViewModel
 
 class MainActivity : AppCompatActivity() {
 
+
+    private lateinit var bankViewModel: BankViewModel
     lateinit var button: Button
     lateinit var pan: TextInputEditText
     lateinit var dd: TextInputEditText
@@ -22,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        bankViewModel = ViewModelProvider(this).get(BankViewModel::class.java)
         button = findViewById<Button>(R.id.next)
         pan=findViewById<TextInputEditText>(R.id.pan)
         dd=findViewById<TextInputEditText>(R.id.dd)
@@ -35,7 +42,8 @@ class MainActivity : AppCompatActivity() {
 
 
         button.setOnClickListener{
-            Toast.makeText(applicationContext, "Details Submitted Successfully", Toast.LENGTH_LONG).show()
+            //Toast.makeText(applicationContext, "Details Submitted Successfully", Toast.LENGTH_LONG).show()
+            insertBank()
            // finish()
         }
 
@@ -160,6 +168,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         return true
+    }
+
+     fun insertBank(){
+        val bank = Bank(
+
+            pan.text.toString(),
+            dd.text.toString().toInt(),
+            mm.text.toString().toInt(),
+            yyyy.text.toString().toInt(),
+
+        )
+        bankViewModel.addBank(bank)
+         Toast.makeText(applicationContext, "Details Submitted Successfully", Toast.LENGTH_LONG).show()
+       //  Toast.makeText(applicationContext,"data added", Toast.LENGTH_SHORT).show()
+
     }
 
 
