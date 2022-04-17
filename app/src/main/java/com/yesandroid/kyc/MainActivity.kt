@@ -54,11 +54,18 @@ class MainActivity : AppCompatActivity() {
             try {
                 if (charSequence != null) {
                     if(charSequence.length==2) {
-                        if(validate())
+                        var d: Int= charSequence.toString().toInt();
+
+                        if(d > 31 || d<1)
+                        {
+                            Toast.makeText(applicationContext, "Date is Invalid", Toast.LENGTH_LONG).show()
+                        }
+                       else if(validate())
                         {
                             button.isEnabled=true
                             Toast.makeText(applicationContext, "Test", Toast.LENGTH_LONG).show()
                         }
+
                         }
 
                 }
@@ -71,7 +78,14 @@ class MainActivity : AppCompatActivity() {
             try {
                 if (charSequence != null) {
                     if(charSequence.length==2) {
-                        if(validate())
+
+                        var m: Int= charSequence.toString().toInt();
+
+                        if(m > 12 || m<1)
+                        {
+                            Toast.makeText(applicationContext, "Month is Invalid", Toast.LENGTH_LONG).show()
+                        }
+                       else if(validate())
                         {
                             button.isEnabled=true
                             Toast.makeText(applicationContext, "Test", Toast.LENGTH_LONG).show()
@@ -88,7 +102,15 @@ class MainActivity : AppCompatActivity() {
             try {
                 if (charSequence != null) {
                     if(charSequence.length==4) {
-                        if(validate())
+
+                        var y: Int= charSequence.toString().toInt();
+
+                        if(y>2005)
+                        {
+                            Toast.makeText(applicationContext, "Age is less then 18 year", Toast.LENGTH_LONG).show()
+                        }
+
+                       else if(validate())
                         {
                             button.isEnabled=true
                             Toast.makeText(applicationContext, "Test", Toast.LENGTH_LONG).show()
@@ -138,4 +160,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     } */
+
+//    val txt = "82389235"
+//    val numbers = txt.map { it.toString().toInt() }
 }
