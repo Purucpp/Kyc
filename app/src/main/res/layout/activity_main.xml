@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:textSize="50dp"
             android:layout_marginTop="10dp"
-            android:textColor="#FFA500"
+            android:textColor="#d6492a"
 
             android:text="S."
            />
@@ -205,8 +205,9 @@
 
             <Button
                 android:layout_width="match_parent"
+                android:id="@+id/next"
                 android:layout_height="wrap_content"
-
+                android:enabled="true"
                 android:text="Next"
                 ></Button>
             <TextView
