@@ -3,6 +3,7 @@ package com.yesandroid.kyc
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
@@ -26,10 +27,19 @@ class MainActivity : AppCompatActivity() {
         dd=findViewById<TextInputEditText>(R.id.dd)
         mm=findViewById<TextInputEditText>(R.id.mm)
         yyyy=findViewById<TextInputEditText>(R.id.yyyy)
+        val cl=findViewById<TextView>(R.id.close)
+
+        cl.setOnClickListener{
+            finish()
+        }
+
 
         button.setOnClickListener{
             Toast.makeText(applicationContext, "Details Submitted Successfully", Toast.LENGTH_LONG).show()
+           // finish()
         }
+
+
 
 
         pan.addTextChangedListener { charSequence  ->
@@ -53,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         dd.addTextChangedListener { charSequence  ->
             try {
                 if (charSequence != null) {
-                    if(charSequence.length==2) {
+                    if(charSequence.length>0) {
                         var d: Int= charSequence.toString().toInt();
 
                         if(d > 31 || d<1)
@@ -77,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         mm.addTextChangedListener { charSequence  ->
             try {
                 if (charSequence != null) {
-                    if(charSequence.length==2) {
+                    if(charSequence.length>0) {
 
                         var m: Int= charSequence.toString().toInt();
 
@@ -136,11 +146,11 @@ class MainActivity : AppCompatActivity() {
         {
             return false
         }
-        else if((dd.text)!!.length!=2)
+        else if((dd.text)!!.length<1)
         {
             return false
         }
-        else if((mm.text)!!.length!=2)
+        else if((mm.text)!!.length<1)
         {
             return false
         }
