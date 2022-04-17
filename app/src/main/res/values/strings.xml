@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kyc</string>
+    <string name="more">Provide PAN and Date of Birth help us find and fetch you KYC from a central registory by the Government of India. Learn more</string>
 </resources>
